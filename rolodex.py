@@ -40,7 +40,10 @@ conn.commit()
 root = tk.Tk()
 root.title("Rolodex")
 root.geometry("900x600")
-root.iconbitmap("rolodex.ico")
+try:
+    root.iconbitmap("rolodex.ico")
+except:
+    pass
 
 notebook = ttk.Notebook(root)
 notebook.pack(fill="both", expand=True, padx=10, pady=10)
