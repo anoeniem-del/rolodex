@@ -42,7 +42,7 @@ root.title("Rolodex")
 root.geometry("900x600")
 try:
     root.iconbitmap("rolodex.ico")
-except:
+except Exception:
     pass
 
 notebook = ttk.Notebook(root)
