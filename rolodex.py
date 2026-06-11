@@ -40,6 +40,40 @@ conn.commit()
 root = tk.Tk()
 root.title("Rolodex")
 root.geometry("900x600")
+style = ttk.Style()
+style.theme_use("default")
+
+# Main background
+root.configure(bg="#2b2b2b")
+
+# Notebook (tab container) background
+style.configure("TNotebook", background="#2b2b2b", borderwidth=0)
+
+# Inactive tabs
+style.configure("TNotebook.Tab",
+    background="#3c3f41",
+    foreground="white",
+    padding=[10, 5],
+    font=("Helvetica", 10))
+
+# Active tab
+style.map("TNotebook.Tab",
+    background=[("selected", "#4a9eff")],
+    foreground=[("selected", "white")])
+
+# Frames
+style.configure("TFrame", background="#2b2b2b")
+style.configure("TLabelframe", background="#2b2b2b", foreground="white")
+style.configure("TLabelframe.Label", background="#2b2b2b", foreground="white")
+
+# Labels
+style.configure("TLabel", background="#2b2b2b", foreground="white")
+
+# Buttons
+style.configure("TButton",
+    background="#4a9eff",
+    foreground="white",
+    padding=[8, 4])
 try:
     root.iconbitmap("rolodex.ico")
 except Exception:
